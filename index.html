@@ -40,29 +40,54 @@
 <body class="bg-slate-50 dark:bg-dark text-slate-900 dark:text-white font-display">
 
     <!-- NAVBAR -->
-  <header
-    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-dark/80 backdrop-blur border-b border-slate-200 dark:border-white/10">
-    <div class="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
-        <h1 class="font-extrabold text-lg">Sanjida</h1>
+    <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-dark/80 backdrop-blur border-b border-slate-200 dark:border-white/10">
+  <div class="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
+    <h1 class="font-extrabold text-lg">Sanjida</h1>
 
-        <nav class="hidden md:flex gap-6 items-center text-sm font-semibold">
-            <a href="#about" class="hover:text-primary transition-colors">About</a>
-            <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-            <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-6 items-center text-sm font-semibold">
+      <a href="#about" class="hover:text-primary transition-colors">About</a>
+      <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+      <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
 
-            <!-- Resume Button -->
-            <a href="/path-to-resume.pdf" 
-               download 
-               class="ml-4 px-4 py-2 bg-gradient-to-r from-primary to-blue-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-500 hover:to-cyan-400 transition-all duration-300">
-                Resume
-            </a>
-        </nav>
+      <!-- Resume Button -->
+      <a href="/path-to-resume.pdf" download
+         class="ml-4 px-4 py-2 bg-gradient-to-r from-primary to-blue-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-500 hover:to-cyan-400 transition-all duration-300">
+         Resume
+      </a>
+    </nav>
 
-        <!-- Mobile Menu Placeholder -->
-        <div class="md:hidden">
-            <!-- Add mobile hamburger menu here if needed -->
-        </div>
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-btn" class="text-slate-900 dark:text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark/90 border-t border-slate-200 dark:border-white/10 shadow-lg">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold">
+      <a href="#about" class="hover:text-primary transition-colors">About</a>
+      <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+      <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+      <a href="/path-to-resume.pdf" download
+         class="px-4 py-2 bg-gradient-to-r from-primary to-blue-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-500 hover:to-cyan-400 transition-all duration-300">
+         Resume
+      </a>
+    </nav>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </header>
 
 
@@ -204,457 +229,571 @@
         </div>
     </section>
     <section class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-  <div class="text-center mb-16">
-    <h3 class="text-primary font-bold tracking-widest text-xs uppercase mb-2">My Skills</h3>
-    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Frontend Expertise</h2>
-    <div class="h-1 w-16 bg-primary mx-auto rounded-full"></div>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-
-    <!-- Frontend Skills -->
-    <div class="bg-card-light dark:bg-card-dark rounded-xl p-8 border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-none">
-      <div class="flex items-center gap-3 mb-8">
-        <div class="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Frontend</h3>
-      </div>
-      <div class="space-y-6">
-
-        <!-- Skill Item -->
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">React.js</span>
-            <span class="text-slate-500 dark:text-slate-400">95%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:95%"></div>
-          </div>
+        <div class="text-center mb-16">
+            <h3 class="text-primary font-bold tracking-widest text-xs uppercase mb-2">My Skills</h3>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Frontend Expertise</h2>
+            <div class="h-1 w-16 bg-primary mx-auto rounded-full"></div>
         </div>
 
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">Next.js</span>
-            <span class="text-slate-500 dark:text-slate-400">90%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:90%"></div>
-          </div>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
 
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">JavaScript (ES6+)</span>
-            <span class="text-slate-500 dark:text-slate-400">92%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:92%"></div>
-          </div>
-        </div>
+            <!-- Frontend Skills -->
+            <div
+                class="bg-card-light dark:bg-card-dark rounded-xl p-8 border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-none">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Frontend</h3>
+                </div>
+                <div class="space-y-6">
 
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">Tailwind CSS</span>
-            <span class="text-slate-500 dark:text-slate-400">95%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:95%"></div>
-          </div>
-        </div>
+                    <!-- Skill Item -->
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">React.js</span>
+                            <span class="text-slate-500 dark:text-slate-400">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:95%"></div>
+                        </div>
+                    </div>
 
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">HTML/CSS</span>
-            <span class="text-slate-500 dark:text-slate-400">98%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:98%"></div>
-          </div>
-        </div>
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">Next.js</span>
+                            <span class="text-slate-500 dark:text-slate-400">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:90%"></div>
+                        </div>
+                    </div>
 
-      </div>
-    </div>
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">JavaScript (ES6+)</span>
+                            <span class="text-slate-500 dark:text-slate-400">92%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:92%"></div>
+                        </div>
+                    </div>
 
-    <!-- Tools & Others -->
-    <div class="bg-card-light dark:bg-card-dark rounded-xl p-8 border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-none">
-      <div class="flex items-center gap-3 mb-8">
-        <div class="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Tools & Workflow</h3>
-      </div>
-      <div class="space-y-6">
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">Tailwind CSS</span>
+                            <span class="text-slate-500 dark:text-slate-400">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:95%"></div>
+                        </div>
+                    </div>
 
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">Git/GitHub</span>
-            <span class="text-slate-500 dark:text-slate-400">90%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:90%"></div>
-          </div>
-        </div>
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">HTML/CSS</span>
+                            <span class="text-slate-500 dark:text-slate-400">98%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-cyan-400 h-2.5 rounded-full animate-fill" style="--width:98%"></div>
+                        </div>
+                    </div>
 
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">VS Code</span>
-            <span class="text-slate-500 dark:text-slate-400">95%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:95%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">Figma</span>
-            <span class="text-slate-500 dark:text-slate-400">70%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:70%"></div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <div class="flex justify-between mb-2 text-sm font-medium">
-            <span class="text-slate-700 dark:text-slate-200">Vercel/Netlify</span>
-            <span class="text-slate-500 dark:text-slate-400">88%</span>
-          </div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
-            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:88%"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Tech Tags -->
-  <div class="text-center">
-    <h4 class="text-slate-600 dark:text-slate-400 mb-6 text-sm font-medium uppercase tracking-wide">Technologies I work with</h4>
-    <div class="flex flex-wrap justify-center gap-4">
-      <span class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">React</span>
-      <span class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Next.js</span>
-      <span class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Tailwind</span>
-      <span class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Git</span>
-      <span class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Figma</span>
-      <span class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Vercel</span>
-    </div>
-  </div>
-</section>
-
-<!-- Animate Bars -->
-<style>
-  .animate-fill {
-    width: 0;
-    animation: fill 2s forwards;
-  }
-  @keyframes fill {
-    to {
-      width: var(--width);
-    }
-  }
-</style>
-
-<!-- ACADEMIC BACKGROUND TIMELINE -->
-<section class="py-20 relative overflow-hidden">
-  <!-- Background Blur Circle -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-primary/5 dark:bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
-    <div class="text-center mb-20 animate-fade-in-up">
-      <span class="text-primary font-bold tracking-widest text-sm uppercase mb-3 block">Education</span>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Academic Background</h2>
-      <div class="h-1.5 w-24 mx-auto rounded-full bg-gradient-to-r from-primary to-blue-600"></div>
-    </div>
-
-    <div class="relative max-w-5xl mx-auto">
-      <!-- Timeline Line -->
-      <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 md:-ml-[1px] bg-gradient-to-b from-primary via-blue-600 to-purple-600/20 h-full rounded-full"></div>
-
-      <!-- B.Sc Card -->
-      <div class="relative mb-16 md:grid md:grid-cols-2 md:gap-12 md:items-start group">
-        <!-- Timeline Dot -->
-        <div class="absolute left-6 md:left-1/2 top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_12px_rgba(13,13,242,0.7)] border-4 border-background-light dark:border-background-dark -translate-x-1/2 z-10 md:mt-1.5"></div>
-
-        <div class="pl-16 md:pl-0 md:text-right col-start-1">
-          <div class="bg-card-light dark:bg-card-dark p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-primary/40 hover:shadow-primary/10 hover:-translate-y-2 relative overflow-hidden">
-            <div class="flex flex-col md:flex-row md:justify-end items-start md:items-center gap-4 mb-6">
-              <!-- Graduation Icon -->
-              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-md border border-gray-700/50">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-8 h-8 text-white fill-white">
-                  <path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z"/>
-                </svg>
-              </div>
-              <div class="text-left md:text-right">
-                <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white leading-tight">
-                  B.Sc in Computer Science & Engineering
-                </h3>
-                <p class="text-primary font-medium mt-1">3rd Year Running</p>
-              </div>
+                </div>
             </div>
 
-            <!-- Footer: Location & Date -->
-            <div class="flex flex-col md:flex-row md:justify-end md:items-center gap-3 text-gray-600 dark:text-gray-300">
-              <!-- Location -->
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 text-primary fill-primary">
-                  <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
-                </svg>
-                <span>Bogura, Bangladesh</span>
-              </div>
-              <!-- Calendar -->
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 text-primary fill-primary">
-                  <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
-                </svg>
-                <span>2026 - Present</span>
-              </div>
+            <!-- Tools & Others -->
+            <div
+                class="bg-card-light dark:bg-card-dark rounded-xl p-8 border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-none">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Tools & Workflow</h3>
+                </div>
+                <div class="space-y-6">
+
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">Git/GitHub</span>
+                            <span class="text-slate-500 dark:text-slate-400">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">VS Code</span>
+                            <span class="text-slate-500 dark:text-slate-400">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">Figma</span>
+                            <span class="text-slate-500 dark:text-slate-400">70%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="flex justify-between mb-2 text-sm font-medium">
+                            <span class="text-slate-700 dark:text-slate-200">Vercel/Netlify</span>
+                            <span class="text-slate-500 dark:text-slate-400">88%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                            <div class="bg-purple-500 h-2.5 rounded-full animate-fill" style="--width:88%"></div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
+
         </div>
-      </div>
 
-      <!-- HSC Card -->
-      <div class="relative mb-16 md:grid md:grid-cols-2 md:gap-12 md:items-start group">
-        <!-- Timeline Dot -->
-        <div class="absolute left-6 md:left-1/2 top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_12px_rgba(13,13,242,0.7)] border-4 border-background-light dark:border-background-dark -translate-x-1/2 z-10 md:mt-1.5"></div>
+        <!-- Tech Tags -->
+        <div class="text-center">
+            <h4 class="text-slate-600 dark:text-slate-400 mb-6 text-sm font-medium uppercase tracking-wide">Technologies
+                I work with</h4>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span
+                    class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">React</span>
+                <span
+                    class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Next.js</span>
+                <span
+                    class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Tailwind</span>
+                <span
+                    class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Git</span>
+                <span
+                    class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Figma</span>
+                <span
+                    class="px-5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary dark:hover:border-primary transition-colors cursor-default">Vercel</span>
+            </div>
+        </div>
+    </section>
 
-        <div class="pl-16 md:pl-0 md:text-left col-start-2">
-          <div class="bg-card-light dark:bg-card-dark p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-primary/40 hover:shadow-primary/10 hover:-translate-y-2 relative overflow-hidden">
-            <div class="flex flex-col md:flex-row md:justify-start items-start md:items-center gap-4 mb-6">
-              <!-- School Icon -->
-              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-md border border-gray-700/50">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-8 h-8 fill-white">
-                  <path d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/>
-                </svg>
-              </div>
-              <div class="text-left md:text-left">
-                <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white leading-tight">
-                  Higher Secondary Certificate (HSC)
-                </h3>
-                <p class="text-primary font-medium mt-1">Science Group - Completed 2022</p>
-              </div>
+    <!-- Animate Bars -->
+    <style>
+        .animate-fill {
+            width: 0;
+            animation: fill 2s forwards;
+        }
+
+        @keyframes fill {
+            to {
+                width: var(--width);
+            }
+        }
+    </style>
+
+    <!-- ACADEMIC BACKGROUND TIMELINE -->
+    <section class="py-20 relative overflow-hidden">
+        <!-- Background Blur Circle -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-primary/5 dark:bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10">
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-20 animate-fade-in-up">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-3 block">Education</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Academic Background</h2>
+                <div class="h-1.5 w-24 mx-auto rounded-full bg-gradient-to-r from-primary to-blue-600"></div>
             </div>
 
-            <!-- Footer: Location & Date -->
-            <div class="flex flex-col md:flex-row md:justify-start md:items-center gap-3 text-gray-600 dark:text-gray-300">
-              <!-- Location -->
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 text-primary fill-primary">
-                  <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
-                </svg>
-                <span>Bogura, Bangladesh</span>
-              </div>
-              <!-- Calendar -->
-              <div class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-5 h-5 text-primary fill-primary">
-                  <path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/>
-                </svg>
-                <span>2020 - 2022</span>
-              </div>
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Timeline Line -->
+                <div
+                    class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 md:-ml-[1px] bg-gradient-to-b from-primary via-blue-600 to-purple-600/20 h-full rounded-full">
+                </div>
+
+                <!-- B.Sc Card -->
+                <div class="relative mb-16 md:grid md:grid-cols-2 md:gap-12 md:items-start group">
+                    <!-- Timeline Dot -->
+                    <div
+                        class="absolute left-6 md:left-1/2 top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_12px_rgba(13,13,242,0.7)] border-4 border-background-light dark:border-background-dark -translate-x-1/2 z-10 md:mt-1.5">
+                    </div>
+
+                    <div class="pl-16 md:pl-0 md:text-right col-start-1">
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-primary/40 hover:shadow-primary/10 hover:-translate-y-2 relative overflow-hidden">
+                            <div
+                                class="flex flex-col md:flex-row md:justify-end items-start md:items-center gap-4 mb-6">
+                                <!-- Graduation Icon -->
+                                <div
+                                    class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-md border border-gray-700/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                        class="w-8 h-8 text-white fill-white">
+                                        <path
+                                            d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z" />
+                                    </svg>
+                                </div>
+                                <div class="text-left md:text-right">
+                                    <h3
+                                        class="text-lg md:text-xl font-bold text-gray-900 dark:text-white leading-tight">
+                                        B.Sc in Computer Science & Engineering
+                                    </h3>
+                                    <p class="text-primary font-medium mt-1">3rd Year Running</p>
+                                </div>
+                            </div>
+
+                            <!-- Footer: Location & Date -->
+                            <div
+                                class="flex flex-col md:flex-row md:justify-end md:items-center gap-3 text-gray-600 dark:text-gray-300">
+                                <!-- Location -->
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                        class="w-5 h-5 text-primary fill-primary">
+                                        <path
+                                            d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                                    </svg>
+                                    <span>Bogura, Bangladesh</span>
+                                </div>
+                                <!-- Calendar -->
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                        class="w-5 h-5 text-primary fill-primary">
+                                        <path
+                                            d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                                    </svg>
+                                    <span>2026 - Present</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HSC Card -->
+                <div class="relative mb-16 md:grid md:grid-cols-2 md:gap-12 md:items-start group">
+                    <!-- Timeline Dot -->
+                    <div
+                        class="absolute left-6 md:left-1/2 top-0 w-4 h-4 rounded-full bg-primary shadow-[0_0_12px_rgba(13,13,242,0.7)] border-4 border-background-light dark:border-background-dark -translate-x-1/2 z-10 md:mt-1.5">
+                    </div>
+
+                    <div class="pl-16 md:pl-0 md:text-left col-start-2">
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 md:p-8 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-primary/40 hover:shadow-primary/10 hover:-translate-y-2 relative overflow-hidden">
+                            <div
+                                class="flex flex-col md:flex-row md:justify-start items-start md:items-center gap-4 mb-6">
+                                <!-- School Icon -->
+                                <div
+                                    class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-md border border-gray-700/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                        class="w-8 h-8 fill-white">
+                                        <path
+                                            d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z" />
+                                    </svg>
+                                </div>
+                                <div class="text-left md:text-left">
+                                    <h3
+                                        class="text-lg md:text-xl font-bold text-gray-900 dark:text-white leading-tight">
+                                        Higher Secondary Certificate (HSC)
+                                    </h3>
+                                    <p class="text-primary font-medium mt-1">Science Group - Completed 2022</p>
+                                </div>
+                            </div>
+
+                            <!-- Footer: Location & Date -->
+                            <div
+                                class="flex flex-col md:flex-row md:justify-start md:items-center gap-3 text-gray-600 dark:text-gray-300">
+                                <!-- Location -->
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                        class="w-5 h-5 text-primary fill-primary">
+                                        <path
+                                            d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                                    </svg>
+                                    <span>Bogura, Bangladesh</span>
+                                </div>
+                                <!-- Calendar -->
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                        class="w-5 h-5 text-primary fill-primary">
+                                        <path
+                                            d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                                    </svg>
+                                    <span>2020 - 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="py-20 px-4 md:px-8 bg-slate-50 dark:bg-dark">
-  <div class="max-w-7xl mx-auto text-center mb-16">
-    <h3 class="text-primary font-bold tracking-widest text-xs uppercase mb-2">My Projects</h3>
-    <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Selected Works</h2>
-    <div class="h-1 w-16 bg-primary mx-auto rounded-full"></div>
-  </div>
-
-  <!-- Projects Grid -->
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Project 1 -->
-    <article class="group bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-[480px]">
-      <div class="relative h-56 overflow-hidden">
-        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://i.ibb.co/bMbj0Rd3/pihu.png" alt="Food Lover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">React</span>
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Firebase</span>
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Tailwind</span>
+    <section id="projects" class="py-20 px-4 md:px-8 bg-slate-50 dark:bg-dark">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h3 class="text-primary font-bold tracking-widest text-xs uppercase mb-2">My Projects</h3>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Selected Works</h2>
+            <div class="h-1 w-16 bg-primary mx-auto rounded-full"></div>
         </div>
-      </div>
-      <div class="p-6 flex-1 flex flex-col">
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Food Lover | Local Food Ordering Platform</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">Food Lover is a responsive platform that connects local food vendors with customers, allowing easy browsing, ordering, and live updates using React and Firebase.</p>
-        <a href="https://local-food-lover.web.app" target="_blank" class="inline-flex items-center text-primary hover:text-blue-400 font-semibold text-sm transition-all gap-1">View Live <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </article>
 
-    <!-- Project 2 -->
-    <article class="group bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-[480px]">
-      <div class="relative h-56 overflow-hidden">
-        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://i.ibb.co/x8SCC145/nc.png" alt="Toy Topia">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">React</span>
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Firebase</span>
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Tailwind</span>
+        <!-- Projects Grid -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Project 1 -->
+            <article
+                class="group bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-[480px]">
+                <div class="relative h-56 overflow-hidden">
+                    <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        src="https://i.ibb.co/bMbj0Rd3/pihu.png" alt="Food Lover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">React</span>
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Firebase</span>
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Tailwind</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                        Food Lover | Local Food Ordering Platform</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">Food Lover is a responsive
+                        platform that connects local food vendors with customers, allowing easy browsing, ordering, and
+                        live updates using React and Firebase.</p>
+                    <a href="https://local-food-lover.web.app" target="_blank"
+                        class="inline-flex items-center text-primary hover:text-blue-400 font-semibold text-sm transition-all gap-1">View
+                        Live <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+                class="group bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-[480px]">
+                <div class="relative h-56 overflow-hidden">
+                    <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        src="https://i.ibb.co/x8SCC145/nc.png" alt="Toy Topia">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">React</span>
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Firebase</span>
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Tailwind</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                        Toy Topia | Online Toy Store</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">Toy Topia is an e-commerce
+                        platform for toys, featuring a clean, responsive interface with easy product browsing, cart
+                        management, and secure checkout.</p>
+                    <a href="https://toy-topia-shop.web.app" target="_blank"
+                        class="inline-flex items-center text-primary hover:text-blue-400 font-semibold text-sm transition-all gap-1">View
+                        Live <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+                class="group bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-[480px]">
+                <div class="relative h-56 overflow-hidden">
+                    <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        src="https://i.ibb.co/JYsV8vs/Capture.png" alt="Book Curier">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">React</span>
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Firebase</span>
+                        <span
+                            class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Tailwind</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                        Book Curier | Online Book Delivery Platform</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">Book Curier allows users to
+                        browse, order, and track books online with a smooth and responsive interface, built using React,
+                        Firebase, and Tailwind CSS.</p>
+                    <a href="https://book-curier.web.app/" target="_blank"
+                        class="inline-flex items-center text-primary hover:text-blue-400 font-semibold text-sm transition-all gap-1">View
+                        Live <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
         </div>
-      </div>
-      <div class="p-6 flex-1 flex flex-col">
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Toy Topia | Online Toy Store</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">Toy Topia is an e-commerce platform for toys, featuring a clean, responsive interface with easy product browsing, cart management, and secure checkout.</p>
-        <a href="https://toy-topia-shop.web.app" target="_blank" class="inline-flex items-center text-primary hover:text-blue-400 font-semibold text-sm transition-all gap-1">View Live <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </article>
+    </section>
 
-    <!-- Project 3 -->
-    <article class="group bg-card-light dark:bg-card-dark rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-[480px]">
-      <div class="relative h-56 overflow-hidden">
-        <img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" src="https://i.ibb.co/JYsV8vs/Capture.png" alt="Book Curier">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">React</span>
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Firebase</span>
-          <span class="px-3 py-1 text-xs font-medium text-cyan-300 bg-slate-900/80 rounded-full">Tailwind</span>
-        </div>
-      </div>
-      <div class="p-6 flex-1 flex flex-col">
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Book Curier | Online Book Delivery Platform</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-1">Book Curier allows users to browse, order, and track books online with a smooth and responsive interface, built using React, Firebase, and Tailwind CSS.</p>
-        <a href="https://book-curier.web.app/" target="_blank" class="inline-flex items-center text-primary hover:text-blue-400 font-semibold text-sm transition-all gap-1">View Live <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-  <div class="text-center mb-16 animate-fade-in-up">
-    <h3 class="text-primary font-bold tracking-wider text-sm uppercase mb-2">Contact</h3>
-    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Get In Touch</h2>
-    <div class="h-1 w-24 mx-auto bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end rounded-full mb-8"></div>
-    <p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto leading-relaxed">
-      I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-
-    <div class="flex flex-col justify-between space-y-8">
-      <!-- Contact Methods -->
-      <div class="space-y-8">
-        
-        <!-- Email -->
-        <div class="flex items-start group animate-fade-in-up">
-          <div class="flex-shrink-0">
-            <div class="p-3 rounded-lg bg-gradient-to-tr from-purple-500 to-blue-500 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-white">
-                <path d="M280-280q-33 0-56.5-23.5T200-360v-400q0-33 23.5-56.5T280-840h560q33 0 56.5 23.5T920-760v400q0 33-23.5 56.5T840-280H280Zm280-188L280-663v303h560v-303L560-468Zm0-98 280-194H280l280 194ZM120-120q-33 0-56.5-23.5T40-200v-500h80v500h660v80H120Zm720-546v-94H280v94-94h560v94Z"/>
-              </svg>
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="text-center mb-16 animate-fade-in-up">
+            <h3 class="text-primary font-bold tracking-wider text-sm uppercase mb-2">Contact</h3>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Get In Touch</h2>
+            <div
+                class="h-1 w-24 mx-auto bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end rounded-full mb-8">
             </div>
-          </div>
-          <div class="ml-5">
-            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">Email</h4>
-            <p class="text-lg font-semibold text-gray-900 dark:text-white break-all">
-              <a href="mailto:sanjidaprena7@gmail.com" class="hover:text-primary transition-colors">sanjidaprena7@gmail.com</a>
+            <p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto leading-relaxed">
+                I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my
+                best to get back to you!
             </p>
-          </div>
         </div>
 
-        <!-- Phone -->
-        <div class="flex items-start group animate-fade-in-up">
-          <div class="flex-shrink-0">
-            <div class="p-3 rounded-lg bg-gradient-to-tr from-green-400 to-teal-500 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-white">
-                <path d="M600-560v-280h80v280h-80Zm160 0v-280h80v280h-80Zm38 440q-129 0-251.5-57.5t-217-152q-94.5-94.5-152-217T120-798q0-18 12-30t30-12h162q14 0 25 9t13 23l26 140q2 14-.5 25.5T376-622l-97 98q42 72 105.5 135T524-280l94-94q9-9 23.5-13.5T670-390l138 28q14 3 23 13.5t9 24.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/>
-              </svg>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+            <div class="flex flex-col justify-between space-y-8">
+                <!-- Contact Methods -->
+                <div class="space-y-8">
+
+                    <!-- Email -->
+                    <div class="flex items-start group animate-fade-in-up">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="p-3 rounded-lg bg-gradient-to-tr from-purple-500 to-blue-500 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                    class="w-6 h-6 fill-white">
+                                    <path
+                                        d="M280-280q-33 0-56.5-23.5T200-360v-400q0-33 23.5-56.5T280-840h560q33 0 56.5 23.5T920-760v400q0 33-23.5 56.5T840-280H280Zm280-188L280-663v303h560v-303L560-468Zm0-98 280-194H280l280 194ZM120-120q-33 0-56.5-23.5T40-200v-500h80v500h660v80H120Zm720-546v-94H280v94-94h560v94Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-5">
+                            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">Email</h4>
+                            <p class="text-lg font-semibold text-gray-900 dark:text-white break-all">
+                                <a href="mailto:sanjidaprena7@gmail.com"
+                                    class="hover:text-primary transition-colors">sanjidaprena7@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start group animate-fade-in-up">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="p-3 rounded-lg bg-gradient-to-tr from-green-400 to-teal-500 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                    class="w-6 h-6 fill-white">
+                                    <path
+                                        d="M600-560v-280h80v280h-80Zm160 0v-280h80v280h-80Zm38 440q-129 0-251.5-57.5t-217-152q-94.5-94.5-152-217T120-798q0-18 12-30t30-12h162q14 0 25 9t13 23l26 140q2 14-.5 25.5T376-622l-97 98q42 72 105.5 135T524-280l94-94q9-9 23.5-13.5T670-390l138 28q14 3 23 13.5t9 24.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-5">
+                            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">Phone</h4>
+                            <p class="text-lg font-semibold text-gray-900 dark:text-white">
+                                <a href="tel:+8801742857942" class="hover:text-primary transition-colors">+880
+                                    1742857942</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="flex items-start group animate-fade-in-up">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="p-3 rounded-lg bg-gradient-to-tr from-green-500 to-lime-400 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                    class="w-6 h-6 fill-white">
+                                    <path
+                                        d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-5">
+                            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">WhatsApp</h4>
+                            <p class="text-lg font-semibold text-gray-900 dark:text-white">
+                                <a href="https://wa.me/8801742857942" target="_blank"
+                                    class="hover:text-primary transition-colors">+880 1742857942</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="flex items-start group animate-fade-in-up">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="p-3 rounded-lg bg-gradient-to-tr from-orange-400 to-red-500 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                    class="w-6 h-6 fill-white">
+                                    <path
+                                        d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="ml-5">
+                            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">Location</h4>
+                            <p class="text-lg font-semibold text-gray-900 dark:text-white">
+                                <a href="https://www.google.com/maps/place/Bogura,+Bangladesh" target="_blank"
+                                    class="hover:text-primary transition-colors">
+                                    Bogura, Bangladesh
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
-          <div class="ml-5">
-            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">Phone</h4>
-            <p class="text-lg font-semibold text-gray-900 dark:text-white">
-              <a href="tel:+8801742857942" class="hover:text-primary transition-colors">+880 1742857942</a>
-            </p>
-          </div>
-        </div>
 
-        <!-- WhatsApp -->
-        <div class="flex items-start group animate-fade-in-up">
-          <div class="flex-shrink-0">
-            <div class="p-3 rounded-lg bg-gradient-to-tr from-green-500 to-lime-400 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-white">
-                <path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/>
-              </svg>
+            <!-- Contact Form -->
+            <div class="bg-transparent animate-fade-in-up">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div><input placeholder="Your Name" type="text"
+                                class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                        </div>
+                        <div><input placeholder="Your Email" type="email"
+                                class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                        </div>
+                    </div>
+                    <div><input placeholder="Subject" type="text"
+                            class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" />
+                    </div>
+                    <div><textarea placeholder="Your Message" rows="6"
+                            class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
+                    </div>
+                    <button type="button"
+                        class="w-full py-4 px-6 rounded-lg bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end text-white font-semibold text-lg flex items-center justify-center gap-2 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
+                        Send Message
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" />
+                        </svg>
+                    </button>
+                </form>
             </div>
-          </div>
-          <div class="ml-5">
-            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">WhatsApp</h4>
-            <p class="text-lg font-semibold text-gray-900 dark:text-white">
-              <a href="https://wa.me/8801742857942" target="_blank" class="hover:text-primary transition-colors">+880 1742857942</a>
-            </p>
-          </div>
+
         </div>
+    </section>
 
-        <!-- Location -->
-        <div class="flex items-start group animate-fade-in-up">
-          <div class="flex-shrink-0">
-            <div class="p-3 rounded-lg bg-gradient-to-tr from-orange-400 to-red-500 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="w-6 h-6 fill-white">
-                <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
-              </svg>
-            </div>
-          </div>
-          <div class="ml-5">
-            <h4 class="text-sm font-medium text-text-muted-light dark:text-gray-400 mb-1">Location</h4>
-            <p class="text-lg font-semibold text-gray-900 dark:text-white">
-              <a href="https://www.google.com/maps/place/Bogura,+Bangladesh" target="_blank" class="hover:text-primary transition-colors">
-                Bogura, Bangladesh
-              </a>
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="bg-transparent animate-fade-in-up">
-      <form class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div><input placeholder="Your Name" type="text" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/></div>
-          <div><input placeholder="Your Email" type="email" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/></div>
-        </div>
-        <div><input placeholder="Subject" type="text" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"/></div>
-        <div><textarea placeholder="Your Message" rows="6" class="w-full px-4 py-3 rounded-lg bg-white dark:bg-[#131c31] border border-gray-300 dark:border-[#1f2937] text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea></div>
-        <button type="button" class="w-full py-4 px-6 rounded-lg bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end text-white font-semibold text-lg flex items-center justify-center gap-2 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
-          Send Message
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
-        </button>
-      </form>
-    </div>
-
-  </div>
-</section>
-
-<footer class="bg-slate-900 text-slate-200 dark:bg-slate-800">
-  <div class="max-w-7xl mx-auto py-16 px-6 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+   <footer class="bg-slate-900 text-slate-200 dark:bg-slate-800">
+  <div
+    class="max-w-7xl mx-auto py-16 px-6 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
 
     <!-- About / Brand -->
     <div class="space-y-4">
       <h2 class="text-2xl font-bold text-primary">MyPortfolio</h2>
-      <p class="text-slate-400">Showcasing my selected works, projects, and skills. Connect with me through social media or drop a message below!</p>
-      <div class="flex gap-4 mt-4">
+      <p class="text-slate-400 max-w-md mx-auto md:mx-0">
+        Showcasing my selected works, projects, and skills. Connect with me through
+        social media or drop a message below!
+      </p>
+
+      <div class="flex justify-center md:justify-start gap-4 mt-4">
         <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/sanjida-prena-5613a5335/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="transition-transform transform hover:scale-110 hover:text-blue-500">
-          <svg class="w-6 h-6 fill-current text-slate-400 hover:text-blue-500" viewBox="0 0 24 24">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5c0-1.381-1.119-2.5-2.5-2.5s-2.5 1.119-2.5 2.5v5.5h-3v-10h3v1.387c.776-1.02 2.05-1.387 3.5-1.387 2.481 0 4.5 2.019 4.5 4.5v5.5z"/>
+        <a href="https://www.linkedin.com/in/sanjida-prena-5613a5335/"
+          target="_blank"
+          class="transition-transform hover:scale-110 text-slate-400 hover:text-blue-500">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zM8 19H5V9h3v10zM6.5 7.732A1.75 1.75 0 1 1 6.5 4.23a1.75 1.75 0 0 1 0 3.502zM20 19h-3v-5.5c0-1.38-1.12-2.5-2.5-2.5S12 12.12 12 13.5V19H9V9h3v1.387c.776-1.02 2.05-1.387 3.5-1.387 2.48 0 4.5 2.02 4.5 4.5V19z" />
           </svg>
         </a>
 
         <!-- GitHub -->
-        <a href="https://github.com/SanjidaMostakPrena" target="_blank" class="transition-transform transform hover:scale-110 hover:text-gray-100">
-          <svg class="w-6 h-6 fill-current text-slate-400 hover:text-gray-100" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        <a href="https://github.com/SanjidaMostakPrena"
+          target="_blank"
+          class="transition-transform hover:scale-110 text-slate-400 hover:text-white">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.48 2 2 6.48 2 12.02c0 4.42 2.87 8.18 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0 1 12 6.84c.85 0 1.7.11 2.5.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12.02C22 6.48 17.52 2 12 2z" />
           </svg>
         </a>
       </div>
@@ -664,10 +803,10 @@
     <div>
       <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
       <ul class="space-y-2 text-slate-400">
-        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
-        <li><a href="#about" class="hover:text-primary transition-colors">About Me</a></li>
-        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
-        <li><a href="#blog" class="hover:text-primary transition-colors">Blog</a></li>
+        <li><a href="#projects" class="hover:text-primary">Projects</a></li>
+        <li><a href="#about" class="hover:text-primary">About Me</a></li>
+        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+        <li><a href="#blog" class="hover:text-primary">Blog</a></li>
       </ul>
     </div>
 
@@ -675,16 +814,22 @@
     <div class="space-y-4">
       <h3 class="text-xl font-semibold mb-4">Subscribe</h3>
       <p class="text-slate-400">Get latest updates about my projects and articles.</p>
-      <form class="flex flex-col sm:flex-row gap-2">
-        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-lg border border-gray-700 bg-slate-900 text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary transition-all" />
-        <button type="submit" class="px-4 py-2 bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end text-white rounded-lg hover:from-blue-500 hover:to-cyan-400 transition-all font-semibold">Subscribe</button>
+
+      <form class="flex flex-col sm:flex-row gap-3">
+        <input type="email"
+          placeholder="Your email"
+          class="w-full px-4 py-2 rounded-lg border border-gray-700 bg-slate-900 text-slate-200 focus:ring-2 focus:ring-primary outline-none" />
+        <button type="submit"
+          class="px-5 py-2 rounded-lg bg-gradient-to-r from-primary-gradient-start to-primary-gradient-end text-white font-semibold hover:opacity-90 transition">
+          Subscribe
+        </button>
       </form>
     </div>
 
   </div>
 
-  <!-- Footer Bottom -->
-  <div class="border-t border-gray-700 mt-12 py-6 text-center text-slate-500 text-sm">
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 py-6 text-center text-slate-500 text-sm">
     &copy; 2026 MyPortfolio. All rights reserved.
   </div>
 </footer>
